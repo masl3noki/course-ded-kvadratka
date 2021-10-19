@@ -6,34 +6,6 @@
  * Чтобы переключиться на солвер квадратного уравнения, закомментируйте строку #define TESTMODE
  */
 
-//! Для работы с return
-enum RootCount
-    {
-        InfRoot = -1,
-        NoRoot,
-        OneRoot,
-        TwoRoots,
-        ComplexRoots
-    };
-
-//! Хаб, в котором происходит перераспределение коэффициентов в SolveLinear или SolveSquare
-void SolveEq (double, double, double);
-
-//! Солвер линейного уравнения вида b*y+c=0
-enum RootCount SolveLinear (double, double, double complex * x1);
-
-//! Солвер квадратного уравнения вида a*y^2+b*y+c=0
-enum RootCount SolveSquare (double, double, double, double complex * x1, double complex * x2);
-
-//! Сравнение double с нулем
-bool cmpDouble (double, double);
-
-//! AKA kvadratka.c: главная функция программы, на вход берет коэффициенты и выводит ответ
-void kvadratka (void);
-
-//! AKA UnitTest.c: Юнит-тестирование
-void UnitTest (void);
-
 int main(void)
 {
 #ifndef TESTMODE
@@ -215,7 +187,7 @@ void UnitTest(void)
         printf("PASSED\n");
     } else printf("FAILED\n");
     */
-    
+
     printf("Идет Юнит-тестирование\n");
     int count = 0;
     enum RootCount RootCount;
